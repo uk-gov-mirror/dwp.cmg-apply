@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+    <!--Feedback banner start-->
+
+    <!--Feedback banner stop-->
+
+    <div class="govuk-width-container">
+        {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <form method="post" action="" novalidate>
+
+                        <div class="govuk-panel govuk-panel--confirmation">
+                            <h1 class="govuk-panel__title">Your child maintenance choices</h1>
+                            {# <div class="govuk-panel__body">Your reference number<br>
+                            <strong>HDJ2123F</strong>
+                            </div> #}
+                        </div>
+
+                        <h2 class="govuk-heading-m">Benefits of creating your own arrangement</h2>
+
+                        {% if data['safeguarding'] == "No" %}
+                            <p class="govuk-body">Because you have told us you do not worry about your safety or the safety of your children, a family-based arrangement may be the correct choice for you.
+                        </p>
+                        {% endif %}
+
+                        {% if data['communication-children'] == "Yes" %}
+                            <p class="govuk-body">Because you and the other parent can talk regularly about your children a family-based arrangement could mean that you can have more flexible care arrangements</p>
+                        {% endif %}
+
+                        {% if data['communication-finances'] == "Yes" %}
+                            <p class="govuk-body">Because you and the other parent can talk regularly about your children a family-based arrangement could mean that send or get money more quickly when you need to</p>
+                        {% endif %}
+
+                        {% if data['bank-details'] == "Yes" %}
+                            <p class="govuk-body">If you are comfortable sharing your bank details with the other parent, you could tell them about any changes directly.</p>
+                        {% endif %}
+
+                        {% if data['equal-care'] == "Yes" %}
+                            <p class="govuk-body">If your child stays with you and the other parent equally, you could use our Famliy Based Arranagement calculator to help you decide how much money should go toward your child. It considers payments made toward extra costs, like nappies, school supplies or trips. Except in special situations, we cannot support applications with equal shared care arrangements.</p>
+                        {% endif %}
+
+                        {% if data['reliabe-payments'] == "Yes" %}
+                            <p class="govuk-body">A family-based arrangement could be the right choice if you think the other parent will pay regularly or if you need to have a flexible payment schedule.</p>
+                        {% endif %}
+
+                        <h2 class="govuk-heading-m">Benefits of Child Maintenance service</h2>
+
+                        {% if data['safeguarding'] == "Yes" %}
+                            <p class="govuk-body">The Child Maintenance Service could be a form of mediation if you have safety concerns. We communicate with you and the other parent separately, and you can manage your case in the My Child Maintenance Case service. We also <a href="#" class="govuk-link">offer resources in situations of domestic abuse</a>.
+                        </p>
+                        {% endif %}
+
+                        {% if data['communication-children'] == "No" %}
+                            <p class="govuk-body">By using the Child Maintenance Service, you would not need to talk regularly to the other parent about the case. You could update your details and information that affects payments on the My Child Maintenance Case service. However, you may still  need to talk to them about day-to-day care and scheduling visits.
+                        </p>
+                        {% endif %}
+
+                        {% if data['communication-finances'] == "No" %}
+                            <p class="govuk-body">The Child Maintenance Service uses the Collect and Pay method to transfer money from one parent to the other. We would work with both of you individually to set up a regular payment schedule.
+                        </p>
+                        {% endif %}
+
+                        {% if data['bank-details'] == "No" %}
+                            <p class="govuk-body">Because we use the Collect and Pay method to transfer money from one parent to the other, we do not need to tell the other parent about your bank details. This may be a more private option for you.
+                        </p>
+                        {% endif %}
+
+                        {% if data['arrangement-change'] == "Yes" %}
+                            <p class="govuk-body">If you think your child's overnight care arrangement will change often or become complicated, it may be better to use the Child Maintenance Service. We could help you recalculate the amount of money that should go toward your child.
+                        </p>
+                        {% endif %}
+
+                        {% if data['reliable-payments'] == "No" %}
+                            <p class="govuk-body">The Child Maintenance Service uses the Collect and Pay method to transfer money from one parent to the other. We would work with both of you individually to set up a regular payment schedule.
+                        </p>
+                        {% endif %}
+
+                        {# <button type="submit" class="govuk-button">
+                        Continue
+                    </button> #}
+                    </form>
+
+                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+                    <a href="sections" class="govuk-link">Return to start page</a>
+
+                </div>
+
+                <div class="govuk-grid-column-one-third">
+                    <div class="govuk-button--sticky"></div>
+                    <a href="https://www.bbc.co.uk/weather" role="button" draggable="false" class="govuk-button govuk-button--warning govuk-!-padding-5 govuk-button--sticky govuk-!-width-full govuk-button--stick hide-on-small"data-module="govuk-button">
+                    Hide this page</a>
+
+                    <h3 class="govuk-heading-s">Child Maintenance service</h3>
+                    <a href="#" class="govuk-link">GOV UK pages for Child Maintenance service (opens in new tab)</a>
+
+                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                    <h3 class="govuk-heading-s">Child Maintenance service calculator</h3>
+                    <a href="#" class="govuk-link">Child Maintenance service calculator (opens is new tab)</a>
+
+                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                    <h3 class="govuk-heading-s">Family Based Arrangement calculator</h3>
+                    <a href="#" class="govuk-link">Family Based Arranagement calculator (opens is new tab)</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+{% endblock %}
