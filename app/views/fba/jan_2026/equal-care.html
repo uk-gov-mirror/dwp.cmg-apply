@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+ {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+<!--Feedback banner start-->
+
+<!--Feedback banner stop-->
+
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form method="post" action="arrangement-change" novalidate>
+                    <!--start of radio-->
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="equal-care-hint">
+                            <legend
+                                class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-fieldset__legend--xl ">
+                                <h1 class="govuk-fieldset__heading">
+                                    Do you have 'equal care' for your children? </h1>
+                            </legend>
+                            
+                            <div class="govuk-radios govuk-radios--inline">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="equal-care"
+                                        name="equal-care" type="radio" value="Yes">
+                                    <label class="govuk-label govuk-radios__label" for="equal-care">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="equal-care-2"
+                                        name="equal-care" type="radio" value="No">
+                                    <label class="govuk-label govuk-radios__label" for="equal-care-2">
+                                        No
+                                    </label>
+                                </div>
+                                
+                            </div>
+                        </fieldset>
+                    </div>
+                    <br>
+                    <!--end-->
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+            {% include "exit-button.html" %}
+
+        </div>
+    </main>
+</div>
+{% endblock %}

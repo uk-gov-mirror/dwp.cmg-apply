@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+ {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+<!--Feedback banner start-->
+
+<!--Feedback banner stop-->
+
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form method="post" action="communications-about-finances" novalidate>
+                    <!--start of radio-->
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="communication-children-hint">
+                            <legend
+                                class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-fieldset__legend--xl ">
+                                <h1 class="govuk-fieldset__heading">
+                                    Can you and the other parent have regular communication about your children? </h1>
+                            </legend>
+                            
+                            <div class="govuk-radios govuk-radios--inline">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="communication-children"
+                                        name="communication-children" type="radio" value="Yes">
+                                    <label class="govuk-label govuk-radios__label" for="communication-children">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="communication-children-2"
+                                        name="communication-children" type="radio" value="No">
+                                    <label class="govuk-label govuk-radios__label" for="communication-children-2">
+                                        No
+                                    </label>
+                                </div>
+                                
+                            </div>
+                        </fieldset>
+                    </div>
+                    <br>
+                    <!--end-->
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+            {% include "exit-button.html" %}
+
+        </div>
+    </main>
+</div>
+{% endblock %}

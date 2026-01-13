@@ -1,0 +1,130 @@
+{% extends "layout.html" %} {% block pageTitle %}Apply for help arranging child maintenance {% endblock %} {% block content %}
+<!--Feedback banner start-->
+
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form method="post" novalidate>
+                    <h2 class="govuk-heading-xl">Check your answers</h2>
+
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Are you worried about your safety or the safety of your children?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                {{data['safeguarding'] }} 
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="safeguarding">
+                                    Change
+                                    <span class="govuk-visually-hidden"> safeguarding</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Can you and the other parent have regular communication about your children?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                {{data['communication-children'] }}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="communications-about-children">
+                                    Change
+                                    <span class="govuk-visually-hidden"> communication about children</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Can you and the other parent have regular communication about finances?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                 {{data['communication-finances'] }}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="communications-about-finances">
+                                    Change
+                                    <span class="govuk-visually-hidden"> communication about finances</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                               Are you comfortable sharing your bank details with the other parent?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                {{data['bank-details'] }}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="bank-details">
+                                    Change
+                                    <span class="govuk-visually-hidden"> if you are comfortable sharing your bacnk details</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Do you have 'equal care' for your children?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                {{data['equal-care'] }}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="equal-care">
+                                    Change
+                                    <span class="govuk-visually-hidden"> if you have equal care</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                               Do you think your overnight care arrangement will change often?
+                                </dt>
+                            <dd class="govuk-summary-list__value">
+                                {{data['arrangement-change'] }}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="arrangement-change">
+                                    Change
+                                    <span class="govuk-visually-hidden"> if your care arranegment will chnage often</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Do you think the other parent will send money toward your child regularly?</dt>
+                            <dd class="govuk-summary-list__value">
+                                {{data['reliable-payments'] }}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="reliable-payments">
+                                    Change
+                                    <span class="govuk-visually-hidden"> if you think th eother will make reliabe payments</span>
+                                </a>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+
+                </form>
+
+            </div>
+            {% include "exit-button.html" %}
+        </div>
+    </main>
+</div>
+{% endblock %}

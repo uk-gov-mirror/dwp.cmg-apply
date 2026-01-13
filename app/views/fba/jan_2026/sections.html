@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner-padding-top.html" %}
+
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-xl">Family Based Arrangement (FBA) Prototype</h1>
+
+          <p>
+            <strong>What it is:</strong>
+          </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Questions to understand if parents would benefit from making a Family Based Arrangement </li>
+            <li>Includes both the RP and PP for agnostic journeys</li>
+          </ul>
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+          <p>
+            <strong>Latest user research:</strong>
+          </p>
+
+          <p class="govuk-heading-s">Initial designs for question pages - January 2026</p>
+          <p class="govuk-body">User Research screens- Example journey: Questions to provide recooendations to the parent if a FBA would meet their needs for an arrnagement of paying for their childrens care.
+          </P>
+          <p><a href="/fba/jan_2026/safeguarding.html" role="button" draggable="false" class="govuk-button " data-module="govuk-button">Continue to prototype</a>
+          </P>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+{% endblock %}
