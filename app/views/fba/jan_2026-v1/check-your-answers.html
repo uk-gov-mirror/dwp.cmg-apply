@@ -28,7 +28,7 @@
 
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Can you and the other parent have regular communication about your children?
+                                Can you and the other parent talk regularly about your children?
                             </dt>
                             <dd class="govuk-summary-list__value">
                                 {{data['communication-children'] }}
@@ -43,7 +43,7 @@
 
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Can you and the other parent have regular communication about finances?
+                                Can you and the other parent talk regularly about finances?
                             </dt>
                             <dd class="govuk-summary-list__value">
                                  {{data['communication-finances'] }}
@@ -52,6 +52,20 @@
                                 <a class="govuk-link" href="communications-about-finances">
                                     Change
                                     <span class="govuk-visually-hidden"> communication about finances</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Can you and the other parent agree on a regular payment schedule?</dt>
+                            <dd class="govuk-summary-list__value">
+                                {{data['reliable-payments'] }}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="reliable-payments">
+                                    Change
+                                    <span class="govuk-visually-hidden"> if you think th eother will make reliabe payments</span>
                                 </a>
                             </dd>
                         </div>
@@ -70,7 +84,7 @@
                                 </a>
                             </dd>
                         </div>
-
+                        
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                                 Do you have 'equal care' for your children?
@@ -88,32 +102,19 @@
 
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                               Do you think your overnight care arrangement will change often?
-                                </dt>
+                                Do you think your overnight care arrangements will change often?
+                            </dt>
                             <dd class="govuk-summary-list__value">
                                 {{data['arrangement-change'] }}
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="arrangement-change">
                                     Change
-                                    <span class="govuk-visually-hidden"> if your care arranegment will chnage often</span>
+                                    <span class="govuk-visually-hidden"> if your care arrangements will chnage often</span>
                                 </a>
                             </dd>
                         </div>
 
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Do you think the other parent will send money toward your child regularly?</dt>
-                            <dd class="govuk-summary-list__value">
-                                {{data['reliable-payments'] }}
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="reliable-payments">
-                                    Change
-                                    <span class="govuk-visually-hidden"> if you think th eother will make reliabe payments</span>
-                                </a>
-                            </dd>
-                        </div>
                     </dl>
 
                     <button type="submit" class="govuk-button">
