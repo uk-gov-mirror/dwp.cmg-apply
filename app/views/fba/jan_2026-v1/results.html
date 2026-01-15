@@ -1,10 +1,7 @@
 {% extends "layout-fba.html" %}
 {% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
 {% block content %}
-    <!--Feedback banner start-->
-
-    <!--Feedback banner stop-->
-
+    
     <div class="govuk-width-container">
         {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
         <main class="govuk-main-wrapper " id="main-content" role="main">
@@ -22,60 +19,104 @@
                         <h2 class="govuk-heading-m">Benefits of creating your own arrangement</h2>
 
                         {% if data['safeguarding'] == "No" %}
+                            <h3 class="govuk-heading-s">Concerns about your safety</h3>
                             <p class="govuk-body">Because you have told us you do not worry about your safety or the safety of your children, a family-based arrangement may be the correct choice for you.
                         </p>
                         {% endif %}
 
-                        {% if data['communication-children'] == "Yes" %}
+                        {% if data['communication-children'] == "Yes" and data['communication-finances'] == "No"%}
+                            <h3 class="govuk-heading-s">Communication with the other parent</h3>
                             <p class="govuk-body">Because you and the other parent can talk regularly about your children a family-based arrangement could mean that you can have more flexible care arrangements</p>
                         {% endif %}
 
-                        {% if data['communication-finances'] == "Yes" %}
-                            <p class="govuk-body">Because you and the other parent can talk regularly about your children a family-based arrangement could mean that send or get money more quickly when you need to</p>
+                        {% if data['communication-children'] == "Yes" and data['communication-finances'] == "Yes" %}
+                            <h3 class="govuk-heading-s">Communication with the other parent</h3>
+                            <p class="govuk-body">Because you and the other parent can talk regularly about your children and finances, a family-based arrangement could mean that you can:
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>have more flexible care arrangements</li>
+                                    <li>send or get money more quickly when you need to</li>
+                                </ul>
+                            </p>
+                        {% endif %}
+
+                        {% if data['communication-finances'] == "Yes" and data['communication-children'] == "No"%}
+                        <h3 class="govuk-heading-s">Communication with the other parent</h3>
+                            <p class="govuk-body">Because you and the other parent can talk regularly about your finances a family-based arrangement could mean that send or get money more quickly when you need to</p>
                         {% endif %}
 
                         {% if data['bank-details'] == "Yes" %}
+                            <h3 class="govuk-heading-s">Finances</h3>
                             <p class="govuk-body">If you are comfortable sharing your bank details with the other parent, you could tell them about any changes directly.</p>
                         {% endif %}
 
-                        {% if data['equal-care'] == "Yes" %}
-                            <p class="govuk-body">If your child stays with you and the other parent equally, you could use our Famliy Based Arranagement calculator to help you decide how much money should go toward your child. It considers payments made toward extra costs, like nappies, school supplies or trips. Except in special situations, we cannot support applications with equal shared care arrangements.</p>
+                        {% if data['equal-care'] == "Yes" and data['arrangement-change'] == "No" %}
+                            <h3 class="govuk-heading-s">Care arrangement</h3>
+                            <p class="govuk-body">If your child stays with you and the other parent equally, you could use our <a href="#" class="govuk-link">Family Based Arrangement calculator</a> to help you decide how much money should go toward your child. It considers payments made toward extra costs, like nappies, school supplies or trips. Except in special situations, we cannot support applications with equal shared care arrangements.</p>
+                        {% endif %}    
+                            
+                        {% if data['equal-care'] == "Yes"  and data['arrangement-change'] == "Yes" %}
+                            <h3 class="govuk-heading-s">Care arrangement</h3>
+                            <p class="govuk-body">If your child stays with you and the other parent equally, you could use our <a href="#" class="govuk-link">Family Based Arrangement calculator</a> to help you decide how much money should go toward your child. It considers payments made toward extra costs, like nappies, school supplies or trips. <br> 
+                            Except in special situations, we cannot support applications with equal shared care arrangements. If your situation changes, you could use the Child Maintenance Service.</p>
+                        {% endif %}    
+                            
+                        {% if data['equal-care'] == "No"  and data['arrangement-change'] == "No" %}
+                            <h3 class="govuk-heading-s">Care arrangement</h3>
+                            <p class="govuk-body">If you do not have equal care of your child, you could use our <a href="#" class="govuk-link">Family Based Arrangement calculator</a> to help you decide how much money should go toward your child. It considers payments made toward extra costs, like nappies, school supplies or trips.</p>
                         {% endif %}
 
-                        {% if data['reliabe-payments'] == "Yes" %}
-                            <p class="govuk-body">A family-based arrangement could be the right choice if you think the other parent will pay regularly or if you need to have a flexible payment schedule.</p>
+                        {% if data['reliable-payments'] == "Yes" and data['communication-finances'] == "Yes"%}
+                            <h3 class="govuk-heading-s">Finances</h3>
+                            <p class="govuk-body">Because you and the other parent can talk regularly about finances, a family-based arrangement could mean that you can send or get money more quickly when you need to. It could also be the right choice if you think the other parent will pay regularly or if you need to have a flexible payment schedule.</p>
                         {% endif %}
 
                         <h2 class="govuk-heading-m">Benefits of Child Maintenance service</h2>
 
                         {% if data['safeguarding'] == "Yes" %}
+                            <h3 class="govuk-heading-s">Concerns about your safety</h3>
                             <p class="govuk-body">The Child Maintenance Service could be a form of mediation if you have safety concerns. We communicate with you and the other parent separately, and you can manage your case in the My Child Maintenance Case service. We also <a href="#" class="govuk-link">offer resources in situations of domestic abuse</a>.
                         </p>
                         {% endif %}
 
                         {% if data['communication-children'] == "No" %}
+                            <h3 class="govuk-heading-s">Communication with the other parent</h3>
                             <p class="govuk-body">By using the Child Maintenance Service, you would not need to talk regularly to the other parent about the case. You could update your details and information that affects payments on the My Child Maintenance Case service. However, you may still  need to talk to them about day-to-day care and scheduling visits.
                         </p>
                         {% endif %}
 
                         {% if data['communication-finances'] == "No" %}
+                            <h3 class="govuk-heading-s">Communication with the other parent</h3>
                             <p class="govuk-body">The Child Maintenance Service uses the Collect and Pay method to transfer money from one parent to the other. We would work with both of you individually to set up a regular payment schedule.
                         </p>
                         {% endif %}
 
                         {% if data['bank-details'] == "No" %}
+                            <h3 class="govuk-heading-s">Finances</h3>
                             <p class="govuk-body">Because we use the Collect and Pay method to transfer money from one parent to the other, we do not need to tell the other parent about your bank details. This may be a more private option for you.
                         </p>
                         {% endif %}
 
-                        {% if data['arrangement-change'] == "Yes" %}
-                            <p class="govuk-body">If you think your child's overnight care arrangement will change often or become complicated, it may be better to use the Child Maintenance Service. We could help you recalculate the amount of money that should go toward your child.
-                        </p>
+                        {% if data['equal-care'] == "No" and data['arrangement-change'] == "Yes" %}
+                            <h3 class="govuk-heading-s">Care arrangement</h3>
+                            <p class="govuk-body">If you think your child's overnight care arrangement will change often or become complicated, it may be better to use the Child Maintenance Service. We could help you recalculate the amount of money that should go toward your child.</p>
+                        {% endif %}   
+
+                        {% if data['reliable-payments'] == "No" and data['communication-finances'] == "Yes"%}
+                            <h3 class="govuk-heading-s">Finances</h3>
+                            <p class="govuk-body">The Child Maintenance Service uses the Collect and Pay method to transfer money from one parent to the other. We could work with both of you individually to set up a regular payment schedule.
+                            </p>
                         {% endif %}
 
-                        {% if data['reliable-payments'] == "No" %}
-                            <p class="govuk-body">The Child Maintenance Service uses the Collect and Pay method to transfer money from one parent to the other. We would work with both of you individually to set up a regular payment schedule.
-                        </p>
+                        {% if data['reliable-payments'] == "Yes" and data['communication-finances'] == "No"%}
+                            <h3 class="govuk-heading-s">Finances</h3>
+                            <p class="govuk-body">If you cannot talk to the other parent about finances, you could use <a href="#" class="govuk-link">mediation resource</a>. <br>
+                            If you use the Child Maintenance Service, we could work with both of you individually to set up a regular payment schedule and use Collect and Pay.</p>
+                        {% endif %}
+
+                        {% if data['reliable-payments'] == "No" and data['communication-finances'] == "No"%}
+                            <h3 class="govuk-heading-s">Finances</h3>
+                            <p class="govuk-body">The Child Maintenance Service uses the Collect and Pay method to transfer money from one parent to the other. We could work with both of you individually to set up a regular payment schedule.
+                            </p>    
                         {% endif %}
 
                         {# <button type="submit" class="govuk-button">
